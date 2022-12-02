@@ -1,9 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeName } from 'redux/reducers/testSlice';
 // import styles from '../styles/Home.module.css'
 // import '../styles/test.scss'
 
 export default function Home() {
+  const { name } = useSelector((state) => state.demo);
+  const dispatch = useDispatch();
+
   return (
     <div>
       <Head>
@@ -13,8 +18,10 @@ export default function Home() {
       </Head>
       
       <div className='flex items-center justify-center color-yellow'>
-        hello world
+        hello world {name}
       </div>
+
+      <button onClick={() => dispatch(changeName('hoi ne'))}>click</button>
     </div>
   )
 }
