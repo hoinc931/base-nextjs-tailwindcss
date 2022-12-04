@@ -1,13 +1,17 @@
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import configureAppStore from 'redux/store';
-import '../styles/globals.scss'
+
+import Layout from 'layout/index';
+import '../styles/globals.scss';
 
 const store = configureAppStore();
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   )
 }
