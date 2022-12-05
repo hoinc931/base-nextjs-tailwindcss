@@ -1,30 +1,32 @@
-import Head from 'next/head';
+import { Button } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 
+import HeadTag from '@/components/HeadTag';
+import useTranslation from 'hooks/useTranslation';
 import { changeName } from 'redux/reducers/testSlice';
 
 export default function Home() {
   const { name } = useSelector((state) => state.demo);
   const dispatch = useDispatch();
+  const trans = useTranslation();
 
   return (
     <div className="w-full">
-      <Head>
-        <title>Hoi dep trai</title>
-        <meta name="description" content="this is home meta" />
-        <meta name="application-name" content="" />
-        <meta name="author" content="" />
-        <meta name="keywords" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HeadTag
+        title='Printway.io | Home page'
+        keywords='Printway.io'
+      />
       
       <div className='flex items-center justify-center color-yellow'>
         hello world {name}
       </div>
+      
+      <h2>
+        {trans.demo}
+      </h2>
 
       <div>
-        <button onClick={() => dispatch(changeName('hoi ne'))}>Change name</button>
+        <Button onClick={() => dispatch(changeName('hoi ne'))}>Change name</Button>
       </div>
     </div>
   )
