@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from './Footer';
+import Header from './Header';
 
 const Layout = (props) => {
+  console.log();
   return (
     <div className="min-h-screen">
       <Header />
@@ -11,7 +11,7 @@ const Layout = (props) => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

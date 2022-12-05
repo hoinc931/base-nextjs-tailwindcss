@@ -1,14 +1,14 @@
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
-import en from '../locales/en'
-import vi from '../locales/vi'
+import en from '../locales/en';
+import vi from '../locales/vi';
 
 const useTranslation = () => {
-    const { locale } = useRouter()
+  const { locale } = useRouter();
 
-    const trans = locale === 'vi' ? vi : en
+  const trans = locale === 'vi' ? vi : en;
 
-    return trans
-}
+  return trans;
+};
 
-export default useTranslation
+export default useTranslation;
