@@ -1,4 +1,4 @@
 export default {
-  test_text: 'thử đoạn văn',
+  testText: 'thử đoạn văn',
   demo: 'mẫu đoạn văn'
 };
